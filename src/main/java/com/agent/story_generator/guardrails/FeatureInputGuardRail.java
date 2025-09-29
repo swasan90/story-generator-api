@@ -20,8 +20,8 @@ public class FeatureInputGuardRail implements InputGuardrail  {
 	    if (input == null || input.trim().isEmpty()) {
 	        return fatal("Feature description is empty");
 	    }
-	    if (input.length() > 500) {
-	        return failure("Feature description is too long");
+	    if (input.length() < 200) {
+	        return failure("Feature description is too short");
 	    }
 	    return success();		
 	}

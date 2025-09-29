@@ -14,11 +14,11 @@ import dev.langchain4j.service.spring.AiService;
 @InputGuardrails({ FeatureInputGuardRail.class })
 @OutputGuardrails({ StoryEstimateGuardRail.class })
 public interface StoryGeneratorAgent {
-	
+
 	@SystemMessage("You are a story generation assistant that produces agile stories with structured estimates.")
 	@UserMessage("""
 			Respond only with a valid JSON object. Do not include any introductory text or explanation.
-			Restrict output to approximately 1200 tokens.
+			Restrict output to approximately 7000 tokens.
 
 			Generate user stories for the following feature: {{featureDescription}}
 

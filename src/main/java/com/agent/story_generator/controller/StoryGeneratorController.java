@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.agent.story_generator.model.Feature;
@@ -13,7 +14,7 @@ import com.agent.story_generator.service.StoryGeneratorService;
 
 @RestController
 @RequestMapping(("/api/v1"))
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://story-generator-ui.s3.us-east-2.amazonaws.com", methods = {RequestMethod.POST, RequestMethod.OPTIONS})
 public class StoryGeneratorController { 
 	
 	@Autowired
